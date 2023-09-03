@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Warze.org/cmd Previewer</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+	<script src='run_prettify.js'></script>
+</head>
+<body>
+	<div id="left">
+		<textarea wrap="off" spellcheck="false" id="inputcode" class="code"></textarea>
+		<pre spellcheck="false" class="prettyprint lang-js code" id="outputcode"></pre>
+	</div>
+	<div id="right">
+		<div id="tools">
+			<button id="run" onclick="run()">Run</button>
+			<input placeholder="inp variable" id="inpvar">
+		</div>
+		<hr>
+		<div id="output">
+
+		</div>
+	</div>
+	<script src="main.js"></script>
+</body>
+</html>

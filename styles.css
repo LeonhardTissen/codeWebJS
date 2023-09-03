@@ -1,0 +1,83 @@
+body {
+	margin: 0;
+	overflow: hidden;
+	font-family: "Calibri";
+	color: white;
+}
+@font-face {
+	src: url("calibri.ttf");
+	font-family: "Calibri";
+}
+#left {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 50vw;
+	height: 100vh;
+}
+#right {
+	background-color: #282B30;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 50vw;
+	height: 100vh;
+}
+.code {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	position: absolute;
+	left: 0;
+	height: 100vh;
+	width: calc(50vw - 4px);
+	overflow: auto;
+	tab-size: 53px;
+	resize: none;
+	padding-left: 5px;
+}
+textarea {
+	border: none;
+	overflow-x: scroll;
+	background-color: transparent;
+}
+#inputcode {
+	outline: none;
+	color: transparent;
+	caret-color: white;
+	background-color: black;
+}
+#outputcode {
+	pointer-events: none;
+	border: none;
+	overflow: hidden;
+}
+:root {
+	--boolean: #00CCFF;
+	--classes: #FF8800;
+	--numbers: #00FF00;
+	--default: #FFFFFF;
+	--special: #9999FF;
+	--strings: #FF77FF;
+	--comment: #999999;
+	--backgnd: #000000;
+	--tcursor: #FFFFFF;
+	--tselect: #444444;
+}
+.com {color: var(--comment);}
+.kwd {color: var(--boolean);}
+.typ {color: var(--classes);}
+.lit {color: var(--numbers);}
+.pln {color: var(--default);}
+.pun {color: var(--special);}
+.str {color: var(--strings);}
+::selection {
+	background: var(--tselect);
+}
+#output {
+	padding: 20px;
+	font-size: 20px;
+}
+#output p {
+	margin: 0;
+}
