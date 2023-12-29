@@ -128,7 +128,7 @@ if (nameQuery) {
 	fetch(`https://warze.org/codebot/get?function=${nameQuery}`)
 		.then(res => res.text())
 		.then(code => {
-			code = code.replace(/\\n/g, '\n').replaceAll('\"', '"');
+			code = code.replace(/\\n/g, '\n').replaceAll('\\"', '"');
 			inputcode.value = code;
 			updateCode();
 			run();
