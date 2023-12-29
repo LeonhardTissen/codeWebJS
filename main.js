@@ -131,6 +131,5 @@ if (nameQuery) {
 			code = code.replace(/\\n/g, '\n').replaceAll('\\"', '"');
 			inputcode.value = code;
 			updateCode();
-			run();
 		});
 }
