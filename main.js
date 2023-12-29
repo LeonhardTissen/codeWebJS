@@ -122,3 +122,15 @@ function fixScroll() {
 	inputcode.scrollLeft = Math.min(inputcode.scrollLeft, outputcode.scrollLeft);
 }
 inputcode.onscroll = scrollCode;
+
+const nameQuery = new URLSearchParams(window.location.search).get('function');
+if (nameQuery) {
+	fetch(`https://warze.org/codebot/get?function=${nameQuery}`)
+		.then(res => res.text())
+		.then(code => {
+			code = code.replace(/\\n/g, '\n');
+			inputcode.value = code;
+			updateCode();
+			run();
+		});
+}
