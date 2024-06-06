@@ -34,6 +34,13 @@ function image(src) {
 		}
 	});
 }
+function json(url) {
+	return new Promise(async (resolve, reject) => {
+		const res = await fetch(url);
+		const data = await res.json();
+		resolve(data);
+	});
+}
 let gif_speed = 100;
 function gifspeed(ms) {
 	gif_speed = ms;
@@ -71,8 +78,13 @@ function run() {
 	console.warn(output_cvs);
 
 	try {
-		eval(`let inp = "${inpvar.value}"; ${inputcode.value}`);
+		eval(`
+let inp = "${inpvar.value}";
+(async () => {
+	${inputcode.value}
+})()`);
 	} catch (err) {
+		console.error(err);
 		sendMsg(err, 'red');
 	}
 
